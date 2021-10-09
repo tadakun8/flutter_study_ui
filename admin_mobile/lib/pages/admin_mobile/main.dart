@@ -9,13 +9,15 @@ class AdminMobilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: const <Widget>[
-          SideNavigation(),
-          Expanded(
-            child: PostList(),
-          ),
-        ],
+      body: SafeArea(
+        child: Row(
+          children: const <Widget>[
+            SideNavigation(),
+            Expanded(
+              child: PostList(),
+            ),
+          ],
+        ),
       ),
     );
   }

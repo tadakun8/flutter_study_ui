@@ -8,7 +8,7 @@ class PostList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 48),
+      padding: const EdgeInsets.only(top: 10),
       child: Column(
         // 親Containerの高さを最大まで広げる
         mainAxisSize: MainAxisSize.max,

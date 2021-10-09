@@ -1,3 +1,4 @@
+import 'package:admin_mobile/pages/admin_mobile/components/post_list.dart';
 import 'package:admin_mobile/pages/components/side_navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class AdminMobilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
-        children: const <Widget>[SideNavigation()],
+        children: const <Widget>[SideNavigation(), PostList()],
       ),
     );
   }

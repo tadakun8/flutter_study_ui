@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signin_signup/components/header.dart';
 
 const Color kAccentColor = Color(0xFFFE7C64);
 const Color kBackgroundColor = Color(0xFF19283D);
@@ -38,9 +39,7 @@ class WelcomePage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: const [
-              Text('example'),
-            ],
+            children: const [Header()],
           ),
         ),
       ),

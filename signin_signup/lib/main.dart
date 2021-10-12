@@ -39,7 +39,9 @@ class WelcomePage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: const [Header()],
+            children: const [
+              Header(),
+            ],
           ),
         ),
       ),

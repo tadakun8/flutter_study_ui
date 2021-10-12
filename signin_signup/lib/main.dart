@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signin_signup/components/form/signin_form.dart';
 
 import 'components/header/header.dart';
 import 'const/color.dart';
@@ -35,6 +36,10 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             children: const [
               Header(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 32),
+                child: SigninForm(),
+              )
             ],
           ),
         ),

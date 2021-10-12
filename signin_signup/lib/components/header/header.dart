@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signin_signup/components/header/header_backbutton.dart';
 import 'package:signin_signup/components/header/header_title.dart';
 
 import 'header_background.dart';
@@ -29,7 +30,8 @@ class Header extends StatelessWidget {
               padding: EdgeInsets.only(top: 128),
               child: HeaderTitle(),
             ),
-          )
+          ),
+          Positioned(top: 16, left: 0, child: HeaderBackButton())
         ],
       ),
     );

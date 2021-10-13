@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signin_signup/components/footer/footer.dart';
 import 'package:signin_signup/components/form/signin_form.dart';
 
 import 'components/header/header.dart';
@@ -39,7 +40,11 @@ class WelcomePage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 32),
                 child: SigninForm(),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 64),
+                child: Footer(),
+              ),
             ],
           ),
         ),

@@ -72,7 +72,7 @@ class SigninForm extends StatelessWidget {
       const SizedBox(
         height: 48,
       ),
-      Container(
+      SizedBox(
         width: double.infinity,
         child: TextButton(
           style: TextButton.styleFrom(

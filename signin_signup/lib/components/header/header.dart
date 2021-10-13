@@ -11,7 +11,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double height = 320;
-    return Container(
+    return SizedBox(
       height: height,
       // Stackで要素を重ねる
       child: Stack(

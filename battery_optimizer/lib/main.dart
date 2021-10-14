@@ -1,4 +1,5 @@
 import 'package:battery_optimizer/const.dart';
+import 'package:battery_optimizer/optimizer/optimizer_buttons.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,7 +42,7 @@ class BatteryOptimizerPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [Text('data')],
+          children: const [OptimizerButtons()],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:battery_optimizer/const.dart';
+import 'package:battery_optimizer/indicator/battery_level_indicator.dart';
 import 'package:battery_optimizer/optimizer/optimizer_buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +27,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/* BatteryOptimizer画面 */
-
 class BatteryOptimizerPage extends StatelessWidget {
   const BatteryOptimizerPage({Key? key}) : super(key: key);
 
@@ -42,7 +41,10 @@ class BatteryOptimizerPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [OptimizerButtons()],
+          children: const [
+            OptimizerButtons(),
+            BatteryLevelIndicator(),
+          ],
         ),
       ),
     );

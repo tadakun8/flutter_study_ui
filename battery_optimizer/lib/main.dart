@@ -1,3 +1,4 @@
+import 'package:battery_optimizer/app_drainages/app_drainages.dart';
 import 'package:battery_optimizer/const.dart';
 import 'package:battery_optimizer/indicator/battery_level_indicator.dart';
 import 'package:battery_optimizer/optimizer/optimizer_buttons.dart';
@@ -44,6 +45,7 @@ class BatteryOptimizerPage extends StatelessWidget {
           children: const [
             OptimizerButtons(),
             BatteryLevelIndicator(),
+            AppsDrainage(),
           ],
         ),
       ),

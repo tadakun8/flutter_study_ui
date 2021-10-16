@@ -2,6 +2,7 @@ import 'package:battery_optimizer/app_drainages/app_drainages.dart';
 import 'package:battery_optimizer/const.dart';
 import 'package:battery_optimizer/indicator/battery_level_indicator.dart';
 import 'package:battery_optimizer/optimizer/optimizer_buttons.dart';
+import 'package:battery_optimizer/optimizer/optimizer_now_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -46,6 +47,7 @@ class BatteryOptimizerPage extends StatelessWidget {
             OptimizerButtons(),
             BatteryLevelIndicator(),
             AppsDrainage(),
+            OptimizerNowButtons()
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flight_booking/const.dart';
 import 'package:flight_booking/page/components/flight_info.dart';
+import 'package:flight_booking/page/components/ticket_list.dart';
 import 'package:flutter/material.dart';
 
 class FlightBookingPage extends StatelessWidget {
@@ -16,6 +17,7 @@ class FlightBookingPage extends StatelessWidget {
       body: Column(
         children: const [
           FlightInfo(),
+          TicketList(),
         ],
       ),
     );

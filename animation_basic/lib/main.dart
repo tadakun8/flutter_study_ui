@@ -14,53 +14,44 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const ScaleSquare(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class ScaleSquare extends StatefulWidget {
+  const ScaleSquare({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _ScaleSquare createState() => _ScaleSquare();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _ScaleSquare extends State<ScaleSquare> {
+  double size = 100;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            size = 200;
+          });
+        },
+        child: const Icon(Icons.play_arrow),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        // Animated系は動作時間のみを指定できる
+        // 手軽にアニメーションを実装したい場合に使用する
+        child: AnimatedContainer(
+          // 1. アニメーションの動作時間
+          duration: const Duration(
+            seconds: 1,
+          ),
+          // 2. 変化させたいプロパティ
+          width: size,
+          height: size,
+          color: Colors.blue,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

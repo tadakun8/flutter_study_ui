@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_learning/const.dart';
 
 class _Header extends StatelessWidget {
   final String title;
@@ -70,6 +71,24 @@ class _Hero extends StatelessWidget {
   }
 }
 
+class _FigmaLogo extends StatelessWidget {
+  final double size;
+  const _FigmaLogo({Key? key, required this.size}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipOval(
+      child: Container(
+        width: size,
+        height: size,
+        child: Image.network(figmaLogoUrl),
+        padding: const EdgeInsets.all(8),
+        color: Colors.black,
+      ),
+    );
+  }
+}
+
 class _Featured extends StatelessWidget {
   const _Featured({Key? key}) : super(key: key);
 
@@ -129,6 +148,12 @@ class _Featured extends StatelessWidget {
                 ),
               ),
             ),
+            const Align(
+              alignment: Alignment.topCenter,
+              child: _FigmaLogo(
+                size: 48,
+              ),
+            )
           ],
         )
       ],

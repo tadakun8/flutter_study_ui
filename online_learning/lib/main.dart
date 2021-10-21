@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_learning/components/top_page.dart';
+import 'package:online_learning/pages/top/main.dart';
 
 void main() {
   runApp(const MyApp());

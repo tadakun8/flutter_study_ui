@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning/pages/top/components/info.dart';
+import 'package:online_learning/pages/top/components/trending_courses.dart';
 
 import 'components/featured.dart';
 import 'components/header.dart';
@@ -22,7 +23,7 @@ class TopPage extends StatelessWidget {
                 ),
                 Info(),
                 Featured(),
-                // _TrendingCourses(),
+                TrendingCources(),
               ],
             ),
           ),

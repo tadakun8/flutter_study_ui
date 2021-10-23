@@ -89,6 +89,9 @@ class Recommended extends StatelessWidget {
           subtitle: 'Fundamentals of XD',
           logoUrl: xdLogoUrl,
         ),
+        // 最後のカードの詳細ボタンがFloatingBottonと重なって押せなくなるのを防ぐため、
+        // この高さ分だけスクロールできるよう調整
+        const SizedBox(height: 72),
       ],
     );
   }

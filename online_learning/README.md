@@ -2,15 +2,30 @@
 
 A new Flutter project.
 
-## Getting Started
+## 実装メモ
 
-This project is a starting point for a Flutter application.
+### Transition系のアニメーションの実装フロー
 
-A few resources to get you started if this is your first Flutter project:
+ページ遷移にアニメーションをつけるときのフロー
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. stateful widget作成
+1. stateには`SingleTickerProviderStateMixin`をwithする
+1. プロパティに`AnimationController`と`Animation`を定義
+    - `late`で定義
+1. initStateをoverride
+    - AnimmationControllerを定義
+    - Tweenを定義
+    - Animationを定義
+1. `dispose()`をoverride
+1. アニメーションを付与するwidgetを`XXXTransition`でラップする
+    - 今回はSlideTransition
+1. ボタンを押したときにアニメーション発火
+    - controller.forward()
+    - その後にthen()の中でページ遷移
+    - ページ遷移は`PageRouteBuilder()`を使用する
+  ```
+  PageRouteBuilder(
+    pageBuilder: (_, __, ___) => const CoursesPage(),
+  ),
+  ```
+    - その後のthen()で_controller.reverse()をつけて前ページから戻ってきたときに戻す

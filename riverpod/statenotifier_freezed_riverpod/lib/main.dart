@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:statenotifier_freezed_riverpod/pages/my_home_page_consumer_widget.dart';
-import 'package:statenotifier_freezed_riverpod/state/counter_state.dart';
 
 import 'pages/my_home_page_consumer.dart';
 
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePageConsumerWidget(title: 'Flutter Demo Home Page'),
+      home: const MyHomePageConsumer(title: 'Flutter Demo Home Page'),
     );
   }
 }

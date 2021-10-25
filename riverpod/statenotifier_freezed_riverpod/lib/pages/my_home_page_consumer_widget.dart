@@ -2,6 +2,7 @@
 // 値に変更があればConsumerWidget内の全てのWidgetが再描画
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:statenotifier_freezed_riverpod/pages/state_check_page.dart';
 import 'package:statenotifier_freezed_riverpod/state/counter_state.dart';
 
 class MyHomePageConsumerWidget extends ConsumerWidget {
@@ -39,6 +40,9 @@ class MyHomePageConsumerWidget extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           counterNotifier.increment();
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+            return const StateCheckPage();
+          }));
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

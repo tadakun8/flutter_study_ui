@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'pages/my_home_page_consumer.dart';
+import 'package:statenotifier_freezed_riverpod/pages/my_home_page_consumer.dart';
 
 void main() {
   runApp(

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statenotifier_freezed_riverpod/state/counter_state.dart';
 
+import 'state_check_page.dart';
+
 class MyHomePageConsumer extends StatelessWidget {
   final String title;
 
@@ -34,6 +36,9 @@ class MyHomePageConsumer extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.read(countStateProvider.notifier).increment();
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+            return const StateCheckPage();
+          }));
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

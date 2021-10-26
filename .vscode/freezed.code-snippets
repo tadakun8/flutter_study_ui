@@ -1,0 +1,42 @@
+{
+	// Place your flutter_study workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "dart",
+		"prefix": "freezed",
+		"body": [
+			"import 'package:flutter_riverpod/flutter_riverpod.dart';",
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part '$1.freezed.dart';",
+			"",
+			"@freezed",
+			"abstract class $2 with _$$2 {",
+			"\tconst factory $2({int? count, bool? isEnabled}) = _$2;",
+			"}",
+			"",
+			"class $2Notifier extends StateNotifier<$2> {",
+			"$2Notifier() : super(const $2(count: 0, isEnabled: true));",
+			"",
+			"void increment() {",
+			"\tstate = state.copyWith(count: state.count! + 1);",
+			"}",
+			"",
+			"void disableCounter() {",
+			"\tstate = state.copyWith(isEnabled: false);",
+			"}",
+			// }
+
+			"final $2Provider =",
+			"\t$2Provider<$2Notifier, $2State>(",
+			"\t\t(ref) => $2Notifier()",
+			");",
+		],
+		"description": "Log output to console"
+	}
+}

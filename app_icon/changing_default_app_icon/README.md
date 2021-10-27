@@ -2,15 +2,40 @@
 
 A new Flutter project.
 
-## Getting Started
+## アプリアイコン変更の仕方
 
-This project is a starting point for a Flutter application.
+### pubspec.yamlにflutter_launcher_iconの追加
+```pubspec.yaml
+dev_dependencies:
+  ・・・
+  flutter_launcher_icons: <- New!
+```
 
-A few resources to get you started if this is your first Flutter project:
+### モジュールインストール
+```
+$ flutter pub get
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### pubspec.yamlの(どこでもいいけどとりあえず)末尾に追加
+```pubspec.yaml
+flutter_icons:
+  android: true 
+  ios: true
+  image_path: "lib/assets/icons/app_icon.png"
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### image_pathで指定したパスに画像を追加
+`image_path`は`pubspec.yaml`のある位置から始まる
+
+### androidとiosプロジェクトのアイコンを入れ替える
+```
+$ flutter pub pub run flutter_launcher_icons:main
+```
+
+### 終了
+
+### 参考
+
+- https://github.com/sestegra/flutter_launcher_icons/blob/flavors/README.md
+- https://qiita.com/rkowase/items/e0f3f8aec207ed8567aa
+- https://betterprogramming.pub/2-ways-to-add-app-launcher-icons-in-flutter-e9fce30bc177

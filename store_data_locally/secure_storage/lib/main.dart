@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+const storage = FlutterSecureStorage();
 
 void main() {
   runApp(const MyApp());
@@ -31,10 +34,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _incrementCounter() async {
     setState(() {
       _counter++;
     });
+    await storage.write(key: 'counter', value: _counter.toString());
   }
 
   @override
@@ -68,12 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 16,
         ),
         FloatingActionButton(
-          onPressed: () {
+          onPressed: () async {
+            final String? pushedCounter = await storage.read(key: 'counter');
             showDialog(
               context: context,
               builder: (BuildContext context) => AlertDialog(
                 title: const Text('The number of times you pushed ...'),
-                content: Text('$_counter'),
+                content: Text('$pushedCounter'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(context, 'OK'),

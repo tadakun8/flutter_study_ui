@@ -13,10 +13,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-AlbumList _$AlbumListFromJson(Map<String, dynamic> json) {
-  return _AlbumList.fromJson(json);
-}
-
 /// @nodoc
 class _$AlbumListTearOff {
   const _$AlbumListTearOff();
@@ -25,10 +21,6 @@ class _$AlbumListTearOff {
     return _AlbumList(
       albumList: albumList,
     );
-  }
-
-  AlbumList fromJson(Map<String, Object?> json) {
-    return AlbumList.fromJson(json);
   }
 }
 
@@ -39,7 +31,6 @@ const $AlbumList = _$AlbumListTearOff();
 mixin _$AlbumList {
   List<Album>? get albumList => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AlbumListCopyWith<AlbumList> get copyWith =>
       throw _privateConstructorUsedError;
@@ -105,12 +96,9 @@ class __$AlbumListCopyWithImpl<$Res> extends _$AlbumListCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_AlbumList implements _AlbumList {
   const _$_AlbumList({this.albumList});
-
-  factory _$_AlbumList.fromJson(Map<String, dynamic> json) =>
-      _$$_AlbumListFromJson(json);
 
   @override
   final List<Album>? albumList;
@@ -136,18 +124,10 @@ class _$_AlbumList implements _AlbumList {
   @override
   _$AlbumListCopyWith<_AlbumList> get copyWith =>
       __$AlbumListCopyWithImpl<_AlbumList>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_AlbumListToJson(this);
-  }
 }
 
 abstract class _AlbumList implements AlbumList {
   const factory _AlbumList({List<Album>? albumList}) = _$_AlbumList;
-
-  factory _AlbumList.fromJson(Map<String, dynamic> json) =
-      _$_AlbumList.fromJson;
 
   @override
   List<Album>? get albumList;

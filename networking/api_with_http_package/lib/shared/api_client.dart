@@ -10,7 +10,9 @@ class ApiClient {
     final uri = Uri.parse(apiUrl + path);
     final response = await http.get(uri);
     if (response.statusCode == 200) {
-      return AlbumList.fromJson(json.decoder.convert(response.body));
+      // final rawList = json.decode(response.body);
+      // return AlbumList.fromJson({'albumList': rawList});
+      return AlbumList.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to connect to webservice');
     }

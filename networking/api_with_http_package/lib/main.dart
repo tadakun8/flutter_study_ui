@@ -34,18 +34,23 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Fetch Data Example'),
         ),
-        body: Center(
-          child: FutureBuilder<AlbumList>(
-            future: albumList,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return AlbumListWidget(albumList: snapshot.data!.albumList!);
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              }
-              // By default, show a loading spinner.
-              return const CircularProgressIndicator();
-            },
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: FutureBuilder<AlbumList>(
+                future: albumList,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return AlbumListWidget(
+                        albumList: snapshot.data!.albumList!);
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  // By default, show a loading spinner.
+                  return const CircularProgressIndicator();
+                },
+              ),
+            ),
           ),
         ),
       ),

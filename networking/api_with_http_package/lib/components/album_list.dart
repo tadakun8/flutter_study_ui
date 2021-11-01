@@ -1,9 +1,11 @@
 import 'package:api_with_http_package/model/album.dart';
+import 'package:api_with_http_package/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
-class _AlbumWidget extends StatelessWidget {
+class AlbumWidget extends StatelessWidget {
   final Album album;
-  const _AlbumWidget({
+
+  const AlbumWidget({
     Key? key,
     required this.album,
   }) : super(key: key);
@@ -14,6 +16,17 @@ class _AlbumWidget extends StatelessWidget {
       leading: const Icon(Icons.music_note),
       title: Text(album.title!),
       trailing: const Icon(Icons.more_vert),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) {
+              return DetailPage(
+                id: album.id!,
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }
@@ -29,7 +42,11 @@ class AlbumListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...albumList.map((album) => _AlbumWidget(album: album)),
+        ...albumList.map(
+          (album) => AlbumWidget(
+            album: album,
+          ),
+        ),
       ],
     );
   }

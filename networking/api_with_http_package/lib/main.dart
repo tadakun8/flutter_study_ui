@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    albumList = ApiClient.get('albums');
+    albumList = apiClient.getAlbumList();
   }
 
   @override

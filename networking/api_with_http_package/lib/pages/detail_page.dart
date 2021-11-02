@@ -16,7 +16,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   void initState() {
     super.initState();
-    album = ApiClient.getAlbum('albums/${widget.id}');
+    album = apiClient.getAlbum(widget.id);
   }
 
   @override

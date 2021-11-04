@@ -8,10 +8,14 @@ abstract class _BaseClient {
   Future<http.Response> get(String path);
 }
 
-class _HttpClient extends _BaseClient {
+class HttpClient extends _BaseClient {
+  final String clientBaseUrl;
+
+  HttpClient(this.clientBaseUrl);
+
   @override
   Future<http.Response> get(String path) async {
-    final uri = Uri.parse(constants.apiUrl + path);
+    final uri = Uri.parse(clientBaseUrl + path);
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       return response;
@@ -21,7 +25,11 @@ class _HttpClient extends _BaseClient {
   }
 }
 
-class _ApiClient extends _HttpClient {
+class ApiClient extends HttpClient {
+  final String baseUrl;
+
+  ApiClient(this.baseUrl) : super(baseUrl);
+
   Future<Album> getAlbum(int id) async {
     final response = await super.get('albums/$id');
     return Album.fromJson(json.decode(response.body));
@@ -34,4 +42,4 @@ class _ApiClient extends _HttpClient {
   }
 }
 
-final apiClient = _ApiClient();
+final apiClient = ApiClient(constants.apiUrl);

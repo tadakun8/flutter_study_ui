@@ -29,6 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  freezed_annotation:
+  json_annotation: ^4.3.0 
+  json_serializable: ^6.0.0
+  http:
+  flutter_riverpod: ^0.14.0+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +43,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  freezed:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

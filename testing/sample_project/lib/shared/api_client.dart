@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:sample_project/models/album.dart';
-import 'package:sample_project/shared/const.dart' as constants;
 
 abstract class _BaseClient {
   Future<http.Response> get(String path);
@@ -41,5 +40,3 @@ class ApiClient extends HttpClient {
     return parsedJson.map((item) => Album.fromJson(item)).toList();
   }
 }
-
-final apiClient = ApiClient(constants.apiUrl);

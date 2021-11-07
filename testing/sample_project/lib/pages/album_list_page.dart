@@ -13,7 +13,7 @@ class AlbumListPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fetch Data Example'),
+        title: const Text('Sample Project for Testing'),
       ),
       body: SafeArea(
         child: asyncValue.when(

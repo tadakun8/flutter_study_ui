@@ -32,10 +32,10 @@
 			"void disableCounter() {",
 			"\tstate = state.copyWith(isEnabled: false);",
 			"}",
-			// }
+			"}",
 
-			"final $2Provider =",
-			"\t$2Provider<$2Notifier, $2State>(",
+			"final $3Provider =",
+			"\tStateNotifierProvider<$2Notifier, $2>(",
 			"\t\t(ref) => $2Notifier()",
 			");",
 		],

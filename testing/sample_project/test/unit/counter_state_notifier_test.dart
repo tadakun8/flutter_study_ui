@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sample_project/state/counter_state.dart';
 
@@ -41,6 +42,28 @@ void main() {
       expect(
         counterStateNotifier.debugState,
         const CounterState(count: 0, isEnabled: false),
+      );
+    });
+  });
+
+  group('CounterStateProvider', () {
+    late ProviderContainer providerContainer;
+
+    setUp(() {
+      providerContainer = ProviderContainer();
+    });
+
+    test('return CounterState', () {
+      expect(
+        providerContainer.read(counterStateProvider),
+        const CounterState(count: 0, isEnabled: true),
+      );
+    });
+
+    test('return CounterStateNotifier', () {
+      expect(
+        providerContainer.read(counterStateProvider.notifier),
+        isA<CounterStateNotifier>(),
       );
     });
   });

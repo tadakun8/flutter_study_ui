@@ -2,6 +2,9 @@
 
 A sample project using flutter_secure_storage package to store info locally.
 
+## About secure storage package
+
+If you use secure storage package, the information will be stored locally, but the stored data will be encrypted in the terminal.
 
 ## App Features
 
@@ -15,6 +18,3 @@ One button counts the number of times the button is pressed and saves the count 
 
 ![demo](https://user-images.githubusercontent.com/64715484/140593587-c39703c1-8676-4abd-b1d7-59497afc0d51.gif)
 
-## About secure storage package
-
-If you use A, the information will be stored locally, but the stored data will be encrypted in the terminal.

@@ -1,22 +1,32 @@
 # changing_default_app_icon
 
-A new Flutter project.
+Project with Flutter's default icon changed.
 
-## アプリアイコン変更の仕方
+## How to change the app icon
 
-### pubspec.yamlにflutter_launcher_iconの追加
+There are four steps.
+
+1. Add `flutter_launcher_icon` to `pubspec.yaml`
+1. Install package
+1. Add the path of the new icon to `pubspec.yaml`
+1. Replacing the app icon in android and IOS projects
+
+### Add `flutter_launcher_icon` to `pubspec.yaml`
+
 ```pubspec.yaml
 dev_dependencies:
   ・・・
   flutter_launcher_icons: <- New!
 ```
 
-### モジュールインストール
+### Install package
+
 ```
 $ flutter pub get
 ```
 
-### pubspec.yamlの(どこでもいいけどとりあえず)末尾に追加
+### Add the path of the new icon to `pubspec.yaml`
+
 ```pubspec.yaml
 flutter_icons:
   android: true 
@@ -24,17 +34,18 @@ flutter_icons:
   image_path: "lib/assets/icons/app_icon.png"
 ```
 
-### image_pathで指定したパスに画像を追加
-`image_path`は`pubspec.yaml`のある位置から始まる
+- This time, I added it to the end of pubspec.yaml
+- The current path of image_path starts from the hierarchy where pubspec.yaml is located
+- You can also specify icons for android and IOS separately
+    - https://github.com/sestegra/flutter_launcher_icons/blob/flavors/README.md
 
-### androidとiosプロジェクトのアイコンを入れ替える
+### Replacing the app icon in android and IOS projects
+
 ```
 $ flutter pub pub run flutter_launcher_icons:main
 ```
 
-### 終了
-
-### 参考
+## References
 
 - https://github.com/sestegra/flutter_launcher_icons/blob/flavors/README.md
 - https://qiita.com/rkowase/items/e0f3f8aec207ed8567aa

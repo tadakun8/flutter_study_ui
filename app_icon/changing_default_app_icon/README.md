@@ -38,6 +38,7 @@ flutter_icons:
 - The current path of image_path starts from the hierarchy where pubspec.yaml is located
 - You can also specify icons for android and IOS separately
     - https://github.com/sestegra/flutter_launcher_icons/blob/flavors/README.md
+    - https://betterprogramming.pub/2-ways-to-add-app-launcher-icons-in-flutter-e9fce30bc177
 
 ### Replacing the app icon in android and IOS projects
 
@@ -49,4 +50,5 @@ $ flutter pub pub run flutter_launcher_icons:main
 
 - https://github.com/sestegra/flutter_launcher_icons/blob/flavors/README.md
 - https://qiita.com/rkowase/items/e0f3f8aec207ed8567aa
+- https://betterprogramming.pub/2-ways-to-add-app-launcher-icons-in-flutter-e9fce30bc177
 - https://betterprogramming.pub/2-ways-to-add-app-launcher-icons-in-flutter-e9fce30bc177

@@ -1,10 +1,7 @@
 # api_with_http_package
 
-A new Flutter project.
+This project is to learn how to use the http package to get data from API and how to display that data on the screen.
 
-## 実装メモ
+In this project, I used FutureBuilder Widget to display the data retrieved from the API on the screen.
 
-### APIの返り値がリストだった場合のfromJsonの書き方
-
-- https://medium.com/@ferdz.steenkamp/deserializing-json-object-lists-flutter-freezed-list-dynamic-2364a5ebad5c
-- https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
+I used `https://jsonplaceholder.typicode.com/albums` for the API.

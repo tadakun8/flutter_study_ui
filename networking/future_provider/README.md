@@ -1,16 +1,5 @@
 # future_provider
 
-A new Flutter project.
+This project is to learn how to use the http package to get data from API and how to display that data on the screen.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The difference between [api_with_http_package](https://github.com/tadakun8/flutter_study/tree/main/networking/api_with_http_package) and this one is that I used FutureBilder to display the data.

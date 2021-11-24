@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+## Demo
+
+![demo](https://user-images.githubusercontent.com/64715484/143199006-4a698a51-4e5b-4a3b-a79a-c14beb5eccb5.gif)
+
 ## 実装メモ
 
 ### Transition系のアニメーションの実装フロー

@@ -2,6 +2,10 @@
 
 Project with Flutter's default icon changed.
 
+## Screenshot
+
+![screenshot](./screenshot.png)
+
 ## How to change the app icon
 
 There are four steps.

@@ -1,3 +1,4 @@
+import 'package:box_constraints/components/column_expanded_page.dart';
 import 'package:box_constraints/components/column_listview_page.dart';
 import 'package:box_constraints/components/sample_page.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ColumnListviewPage(),
+      home: const ColumnExpandedPage(),
     );
   }
 }

@@ -41,27 +41,19 @@ class _SamplePageState extends State<SamplePage> {
     super.dispose();
   }
 
-  // Widget makeContents() {
-  //   List<Widget> contents = List.from([makeScrollBaner()]);
-  //   if (_isShow) {
-  //     contents.add(makeScrollBaner());
-  //   }
-  //   return Stack(children: contents);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 300),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 300),
         child: Stack(
           children: [
             if (_isShow)
               Container(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 width: double.infinity,
                 color: Colors.orange[100],
-                child: Text(
+                child: const Text(
                   'To see this room\'s full history, upgrade one of our paid plans.',
                   style: TextStyle(color: Colors.red),
                 ),
@@ -70,7 +62,7 @@ class _SamplePageState extends State<SamplePage> {
               controller: _scrollController,
               itemCount: 50,
               itemBuilder: (BuildContext context, int position) {
-                return ListTile(
+                return const ListTile(
                   title: Text('サンプル'),
                   subtitle: Text('これはサンプルです'),
                   leading: Icon(Icons.light),

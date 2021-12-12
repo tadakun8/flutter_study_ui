@@ -10,6 +10,32 @@ class SamplePage extends StatefulWidget {
 class _SamplePageState extends State<SamplePage> {
   late ScrollController _scrollController;
   bool _isShow = false;
+  int _currentIndex = 0;
+  final double itemWidth = 80.0;
+  var servantList = [
+    "Savar",
+    "Archer",
+    "Lancer",
+    "Rider",
+    "Caster",
+    "Assassin",
+    "Berserker",
+    "Ruler",
+    "Avenger",
+    "Alterego",
+    "Mooncancer",
+    "Savar",
+    "Archer",
+    "Lancer",
+    "Rider",
+    "Caster",
+    "Assassin",
+    "Berserker",
+    "Ruler",
+    "Avenger",
+    "Alterego",
+    "Mooncancer"
+  ];
 
   @override
   void initState() {
@@ -54,24 +80,56 @@ class _SamplePageState extends State<SamplePage> {
                 width: double.infinity,
                 color: Colors.orange[100],
                 child: const Text(
-                  'To see this room\'s full history, upgrade one of our paid plans.',
+                  'そろそろスクロールが終わるよ',
                   style: TextStyle(color: Colors.red),
                 ),
               ),
             ListView.builder(
               controller: _scrollController,
-              itemCount: 50,
+              itemCount: 22,
               itemBuilder: (BuildContext context, int position) {
-                return const ListTile(
-                  title: Text('サンプル'),
-                  subtitle: Text('これはサンプルです'),
-                  leading: Icon(Icons.light),
-                  trailing: Icon(Icons.menu),
+                return SizedBox(
+                  height: itemWidth,
+                  child: ListTile(
+                    title: Text(servantList[position]),
+                    subtitle: const Text('これはサンプルです'),
+                    leading: const Icon(Icons.light),
+                    trailing: const Icon(Icons.menu),
+                  ),
                 );
               },
-            )
+            ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.keyboard_arrow_up),
+            label: 'UP',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.keyboard_arrow_down),
+            label: 'DOWN',
+          ),
+        ],
+        onTap: (int index) {
+          if (index == 0) {
+            _scrollController.animateTo(
+              _scrollController.offset - itemWidth,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+            );
+          }
+          if (index == 1) {
+            _scrollController.animateTo(
+              _scrollController.offset + itemWidth,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+            );
+          }
+        },
       ),
     );
   }

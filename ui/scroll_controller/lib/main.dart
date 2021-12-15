@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scroll_controller/pages/sample_page.dart';
+import 'package:scroll_controller/pages/sample_page_with_flutter_hooks.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SamplePage(),
+      home: const SamplePageWithFlutterHook(),
     );
   }
 }

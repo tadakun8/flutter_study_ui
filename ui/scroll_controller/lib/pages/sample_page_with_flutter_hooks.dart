@@ -25,6 +25,8 @@ class SamplePageWithFlutterHook extends HookConsumerWidget {
       }
     }
 
-    return Container();
+    return Container(
+      child: Text("sample"),
+    );
   }
 }
